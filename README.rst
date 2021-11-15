@@ -1,3 +1,10 @@
+==================
+Kaleido
+==================
+
+Repository of Lilypond themes
+
+
 =======
 History
 =======
