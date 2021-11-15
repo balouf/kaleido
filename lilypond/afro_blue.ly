@@ -136,3 +136,29 @@ theme = \staffViolon
 
 
 \include "utils/books.ly"
+
+
+\header {
+
+	title = "Afro Blue (Cm)" 
+
+ 	composer = "Mongo Santamaria"
+
+ 	tagline = ""
+
+
+}
+
+
+\bookOutputName "afro_blue_chant"
+
+
+accords = {\transpose aes es {\accords}}
+
+theme = {\transpose aes es {\staffViolon}}
+
+
+\include "utils/books.ly"
+
+
+
