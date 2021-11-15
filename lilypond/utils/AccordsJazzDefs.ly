@@ -1,4 +1,4 @@
-﻿%---------------------------------
+%---------------------------------
 %\include "_/AccordsJazzDefs.ly"
 %
 % on peut enregistrer ces commandes dans un fichier "AccordsJazzDefs.ly" par exemple
