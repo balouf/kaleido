@@ -1,6 +1,6 @@
 % Created on Mon Sep 20 15:23:38 CEST 2010
 
-\version "2.20.0"
+\version "2.22.0"
 
 
 #(set-global-staff-size 26)
@@ -67,7 +67,7 @@ staffViolon = \new Staff {
 
  % Type notes here 
 
-\compressFullBarRests
+\compressEmptyMeasures
 
 	f4 c'4. aes8 bes2.
 
@@ -162,3 +162,9 @@ theme = {\transpose aes es {\staffViolon}}
 
 
 
+
+
+%{
+convert-ly (GNU LilyPond) 2.22.1  convert-ly: Processing `'...
+Applying conversion: 2.21.0, 2.21.2, 2.22.0
+%}
