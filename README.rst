@@ -4,6 +4,13 @@ Kaleido
 
 Repository of Lilypond themes
 
+================
+Usage
+================
+
+* Install git on your system
+* Execute `git clone https://github.com/balouf/kaleido.git`
+* To get new changes, execute `git pull` from within the kaleido directory
 
 =======
 History
