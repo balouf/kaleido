@@ -4,6 +4,13 @@ Kaleido
 
 Repository of Lilypond themes
 
+================
+Usage
+================
+
+* Install git on your system
+* Execute :code:`git clone https://github.com/balouf/kaleido.git`
+* To get new changes, execute :code:`git pull` from within the kaleido directory
 
 =======
 History
@@ -13,6 +20,9 @@ History
 0.1.1 (2021-11-??): patches
 ---------------------------------
 
+* DONE
+* Arietas (and a few others) have multi-compilation for harmony / other tune versions.
+* TODO
 * Killer joe -> check harmony
 * Miss Ann -> remove colors
 * Peaches -> complete retranscription
@@ -23,7 +33,7 @@ History
 * In case -> write down harmonized riff
 * Voleo -> remove 4/4 version
 * Watermelon -> check possible reponse
-* Arietas -> try double compilation.
+
 
 
 ---------------------------------
