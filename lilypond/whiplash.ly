@@ -10,6 +10,7 @@
 
 \header {
 	title = "Whiplash" 
+	subsubtitle = "Intro, A, B, C, D, B, Intro, solos sur E*+D, B -> Coda"
  	composer = "Hank Levy"
  	tagline = ""
 
@@ -59,7 +60,7 @@ staffViolon = \new Staff {
  % Type notes here 
 \compressEmptyMeasures
 \set Timing.beamExceptions = #'()
-<c' g'>4-> <c g'>8-. <c g'>-. <c g'>4->^"Intro, A, B, C, D, B, Intro, solos sur E*+D, C -> Coda"
+<c' g'>4-> <c g'>8-. <c g'>-. <c g'>4->
 <c g'>8-. <d bes'>-^ r <c g'>8-. <c g'>(
 <bes f'>) <c g'>4-^
 c4-^ bes8 aes g4-^_"Bass or piano (octava)"

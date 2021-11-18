@@ -10,6 +10,7 @@
 
 \header {
 	title = "Armageddon" 
+	subsubtitle = "Reprise avec intro"
  	composer = "Wayne Shorter"
  	tagline = ""
 
