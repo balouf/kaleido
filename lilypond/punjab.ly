@@ -1,7 +1,7 @@
 % Created on Mon Sep 20 15:23:38 CEST 2010
-\version "2.18.2"
+\version "2.22.0"
 
-#(set-global-staff-size 22)
+#(set-global-staff-size 21)
 #(set-default-paper-size "a4")
 
 \include "utils/AccordsJazzDefs.ly"
@@ -48,19 +48,19 @@ staffViolon = \new Staff {
 	\accidentalStyle "modern-cautionary"
 	\relative c' { 	
  % Type notes here 
-\compressFullBarRests
+\compressEmptyMeasures
 % \set Timing.beamExceptions = #'()
 
 \repeat volta 2 {
-<< { \voiceOne 
+<< {
    d'8^"hrns" b r e cis4-. fis8 dis
    r a' e b r fis'4.->
 }
-  \new Voice { \voiceTwo 
+  {
    b,,8 fis r cis' gis4-. dis'8 ais
    r e' b fis r b4.->
   }
->> \oneVoice
+>>
 d8^"pn." b r e cis4-. fis8 dis r a' e b r fis'4.->
 }
 \repeat volta 2 {
@@ -69,13 +69,13 @@ r4 \tuplet 3/2 {<fis b,>8 <b e,> <cis fis,>} <e a,>4-. <fis b,>8 <cis fis,>~ <ci
 r4 \tuplet 3/2 {<es, bes>8 <aes es> <bes fes>} <des aes>4-. r8 <es bes>
 
 <<
-{\voiceOne
+{
 bes4. aes8 g es~ es4~ es1~ es2
-} \new Voice
-{\voiceTwo
+}\\
+{
 f4. es8 d bes~ bes4~ bes2. ces8 aes~ aes2
 }
->> \oneVoice
+>>
 \override Glissando.style = #'zigzag
 r4 <bes' fes>8 <aes es>
 <fis cis> <dis ais> r8 <fis cis> <dis ais>4-. <fis cis>8 <dis ais>
@@ -88,15 +88,15 @@ b aes' r4 r8 aes ges es~
 es4. des8 ges es des e, 
 aes bes des es~ es4. b8
 \tuplet 3/2 {fis'4 g fis} g2~ g4 r <f f,>4.^"hrns" <es es,>8
-<< { \voiceOne 
+<< {
    d8 b r e cis4-. fis8 dis
-   r a' e b r\mark \markup { \musicglyph #"scripts.coda" } fis'4.->
+   r a' e b r\mark \markup { \musicglyph "scripts.coda" } fis'4.->
 }
-  \new Voice { \voiceTwo 
+  {
    b,,8 fis r cis' gis4-. dis'8 ais
    r e' b fis r b4.->
   }
->> \oneVoice 
+>>
 }
 \break
 \repeat volta 2 {
@@ -107,24 +107,24 @@ s s s s s \bar "||" \break
 s s s s \break s s s s
 }
 \break
-\mark \markup { \musicglyph #"scripts.coda" } 
+\mark \markup { \musicglyph "scripts.coda" } 
 d'8^"pn." b r e cis4-. fis8 dis r a' e b r fis'4.->
-<< { \voiceOne 
+<< {
    d8^"hrns" b r e cis4-. fis8 dis
    r a' e b r fis'4.->-\fermata
 }
-  \new Voice { \voiceTwo 
+  { 
    b,,8 fis r cis' gis4-. dis'8 ais
    r e' b fis r b4.->
   }
->> \oneVoice
+>> 
 \bar "|."
 
 
 }
 
 %c4^\markup{Essai} cis c cis
-%\mark \markup {\musicglyph #"scripts.coda" }
+%\mark \markup {\musicglyph "scripts.coda" }
 %c cis c c \break
 %\mark \markup { \column % vspace avant solos si besoin
 %  { " " 

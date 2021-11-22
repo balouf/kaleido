@@ -1,4 +1,4 @@
-\version "2.20.0"
+\version "2.22.0"
 
 
 #(set-global-staff-size 24)
@@ -76,7 +76,7 @@ theme = \new Staff {
 
  % Type notes here 
 
-\compressFullBarRests
+\compressEmptyMeasures
 
 \repeat volta 2 {
 

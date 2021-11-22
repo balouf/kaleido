@@ -71,7 +71,7 @@ theme = \staffViolon
 	title = "On Green Dolphin Street (Eb)" 
 }
 
-\bookOutputName "On_Green_Dolphin_Street_Eb"
+\bookOutputName "on_green_dolphin_street_Eb"
 
 
 accords = {\transpose c es {\accords}}

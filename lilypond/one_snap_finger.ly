@@ -1,5 +1,5 @@
 % Created on Mon Sep 20 15:23:38 CEST 2010
-\version "2.18.2"
+\version "2.22.0"
 
 #(set-global-staff-size 26)
 #(set-default-paper-size "a4")
@@ -41,7 +41,7 @@ staffViolon = \new Staff {
 	\accidentalStyle "modern-cautionary"
 	\relative c' { 	
  % Type notes here 
-\compressFullBarRests
+\compressEmptyMeasures
 % \set Timing.beamExceptions = #'()
 \override TextSpanner.bound-details.left.text = "break (trp. w/ pn.)"
 d8\startTextSpan es ges f a aes es b~ b des4 es8 r c f\stopTextSpan c
@@ -55,7 +55,7 @@ a'4 aes bes8 ces des es~ es1~^"fine" es~ es2 r s1 s s s s s s s s s s s s s_"A7a
 }
 	}
 %c4^\markup{Essai} cis c cis
-%\mark \markup {\musicglyph #"scripts.coda" }
+%\mark \markup {\musicglyph "scripts.coda" }
 %c cis c c \break
 %\mark \markup { \column % vspace avant solos si besoin
 %  { " " 

@@ -1,6 +1,7 @@
 % Created on Mon Sep 20 15:23:38 CEST 2010
 \version "2.22.0"
 
+
 #(set-global-staff-size 25)
 #(set-default-paper-size "a4")
 
@@ -33,7 +34,7 @@
 }
 \context {
     \Staff
-    \accepts "ImproVoice"
+    \accepts ImproVoice
     \remove "Time_signature_engraver"
   }
   \inherit-acceptability "ImproVoice" "Voice"
@@ -57,6 +58,7 @@ accords = \chords {
 	f:sus7 f1:sus9 s1
 	
 }
+
 
 theme = \new Staff {
 	\set Staff.midiInstrument = "violin"

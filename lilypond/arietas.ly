@@ -1,6 +1,6 @@
 % Created on Mon Sep 20 15:23:38 CEST 2010
 
-\version "2.20.0"
+\version "2.22.0"
 
 
 #(set-global-staff-size 24)
@@ -85,7 +85,7 @@ staffViolon_old = \new Staff {
 
  % Type notes here 
 
-\compressFullBarRests
+\compressEmptyMeasures
 
 \partial 4. f8 e d
 r4 r8 c r4 r8 a
@@ -145,7 +145,7 @@ staffHarmonie_old = \new Staff {
 
  % Type notes here 
 
-\compressFullBarRests
+\compressEmptyMeasures
 
 \partial 4. r4.
 
@@ -254,12 +254,6 @@ theme=\staffHarmonie
 \header {
 
 	title = "Arietas (Harmony)" 
-
- 	composer = "Mongo Santamaria"
-
- 	tagline = ""
-
-
 }
 
 
@@ -267,5 +261,3 @@ theme=\staffHarmonie
 
 
 \include "utils/books.ly"
-
-

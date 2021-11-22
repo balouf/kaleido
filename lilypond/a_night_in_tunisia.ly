@@ -1,5 +1,5 @@
 % Created on Mon Sep 20 15:23:38 CEST 2010
-\version "2.14.0"
+\version "2.22.0"
 
 #(set-global-staff-size 22)
 #(set-default-paper-size "a4")
@@ -53,10 +53,10 @@ theme = \new Staff {
 	\set Staff.midiInstrument = "violin"
 	\key f \major
 	\clef treble
-	#(set-accidental-style 'modern-cautionary)
+	\accidentalStyle modern-cautionary
 	\relative c' { 	
  % Type notes here 
-\compressFullBarRests
+\compressEmptyMeasures
 \clef bass
 % Ligne de basse
 \partial 8 \parenthesize bes8^\markup{Latin}
@@ -64,13 +64,13 @@ theme = \new Staff {
 % A A
 \break \clef treble \partial 8 a8\(
 \repeat volta 2 {
-\times 2/3 {bes des f} c'2\)
+\tuplet 3/2 {bes des f} c'2\)
 bes8\( f gis a~ a4\) r4 r8
-a,8\( \times 2/3 {bes des f} c' c~ c4\)
+a,8\( \tuplet 3/2 {bes des f} c' c~ c4\)
 bes8\( f a2.\) r8
-a,\( \times 2/3 {bes des f} c'2\)
+a,\( \tuplet 3/2 {bes des f} c'2\)
 bes8\( f gis a~ a4\) r2
-a8([ bes] \times 2/3 {a16 bes a} g8 es4)
+a8([ bes] \tuplet 3/2 {a16 bes a} g8 es4)
 cis8( d~
 }
 \alternative {
@@ -82,19 +82,19 @@ c4.)^\markup{Swing} a8( a4.) g8( fis4)
 es'8( cis d c4) a8
 bes g4 fis8~ fis4 a8( fis g a e4) r4 r8
 \acciaccatura a bes~ bes \acciaccatura a bes4 r8 r4
-\times 2/3 {g16( aes g} f8 e4)
-\times 2/3 {des'16( es des} b8 c bes4)
-gis8( a4.) f8( \times 2/3 {g16 aes g} f8
-\times 2/3 {g16[ aes g} f8] e2.) r8
+\tuplet 3/2 {g16( aes g} f8 e4)
+\tuplet 3/2 {des'16( es des} b8 c bes4)
+gis8( a4.) f8( \tuplet 3/2 {g16 aes g} f8
+\tuplet 3/2 {g16[ aes g} f8] e2.) r8
 % A
 a,8\(^\markup{Latin}
-\times 2/3 {bes des f} c'2\)
+\tuplet 3/2 {bes des f} c'2\)
 bes8\( f gis a~ a4\) r4 r8
-a,8\( \times 2/3 {bes des f} c' c~ c4\)
+a,8\( \tuplet 3/2 {bes des f} c' c~ c4\)
 bes8\( f a2.\) r8
-a,\( \times 2/3 {bes des f} c'2\)
+a,\( \tuplet 3/2 {bes des f} c'2\)
 bes8\( f gis a~ a4\) r2
-a8([ bes] \times 2/3 {a16 bes a} g8 es4)
+a8([ bes] \tuplet 3/2 {a16 bes a} g8 es4)
 cis8( d~ d4) r
 % Interlude
 r8 a'4-> a8~->(^\markup{Interlude} a4 g8 e) a4( g8 e) a( g e a) r4 r8

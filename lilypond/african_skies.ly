@@ -1,5 +1,5 @@
 % Created on Mon Sep 20 15:23:38 CEST 2010
-\version "2.12.3"
+\version "2.22.0"
 \include "utils/AccordsJazzDefs.ly"
 #(set-global-staff-size 22)
 #(set-default-paper-size "a4")
@@ -64,10 +64,10 @@ staffViolon = \new Staff {
 	\set Staff.midiInstrument = "violin"
 	\key c \major
 	\clef treble
-	#(set-accidental-style 'modern-cautionary)
+	\accidentalStyle modern-cautionary
 	\relative c' { 	
  % Type notes here 
-\compressFullBarRests
+\compressEmptyMeasures
 r4. r4 r16 d
 \mark \markup {\box "A"}
 \bar "||" 

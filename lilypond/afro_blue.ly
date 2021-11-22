@@ -152,19 +152,8 @@ theme = \staffViolon
 
 \bookOutputName "afro_blue_chant"
 
-
 accords = {\transpose aes es {\accords}}
 
 theme = {\transpose aes es {\staffViolon}}
 
-
 \include "utils/books.ly"
-
-
-
-
-
-%{
-convert-ly (GNU LilyPond) 2.22.1  convert-ly: Processing `'...
-Applying conversion: 2.21.0, 2.21.2, 2.22.0
-%}

@@ -1,5 +1,5 @@
 % Created on Mon Sep 20 15:23:38 CEST 2010
-\version "2.18.2"
+\version "2.22.0"
 
 #(set-global-staff-size 22)
 #(set-default-paper-size "a4")
@@ -39,7 +39,7 @@ theme = \new Staff {
 	\accidentalStyle "modern-cautionary"
 	\relative c' { 	
  % Type notes here 
-\compressFullBarRests
+% \compressEmptyMeasures
 %\set Timing.beamExceptions = #'()
 \partial 8 a''8 
 \bar "||" \mark \default
@@ -58,12 +58,12 @@ r f'2. es8 f es c~ c es c aes~
 aes4. f8 bes c r4 r2 r4 r8 a'
 \bar "||" \mark \default \break
 r c r a bes ges es bes' aes f des aes fis' d r fis
-e d cis e d d bes g  \mark \markup { \musicglyph #"scripts.coda" } 
+e d cis e d d bes g  \mark \markup { \musicglyph "scripts.coda" } 
 a4 f'8 es~ es4. g8
 f es d f es4-. r8 ges f des aes f b4. e,8
 a4-. cis8 e bes c r4 a'8 c, d f r2\bar "|."
 \break
-\mark \markup { \musicglyph #"scripts.coda" }
+\mark \markup { \musicglyph "scripts.coda" }
 a,4 f'8 es r4 f,8 d'~ d2. c8 ges~
 ges2. aes8 f'~ f2. e8 b~ b2. cis8 gis'~
 gis2. fis8 bes, r^"Break" c,16 d e f g a bes c d e f g a bes c1~ c\fermata \bar "|."
@@ -71,3 +71,10 @@ gis2. fis8 bes, r^"Break" c,16 d e f g a bes c d e f g a bes c1~ c\fermata \bar 
 }
 
 \include "utils/books.ly"
+
+%{
+convert-ly (GNU LilyPond) 2.22.1  convert-ly: Processing `'...
+Applying conversion: 2.19.2, 2.19.7, 2.19.11, 2.19.16, 2.19.22,
+2.19.24, 2.19.28, 2.19.29, 2.19.32, 2.19.39, 2.19.40, 2.19.46,
+2.19.49, 2.20.0, 2.21.0, 2.21.2, 2.22.0
+%}

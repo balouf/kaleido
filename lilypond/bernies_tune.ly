@@ -123,10 +123,7 @@ theme = {\transpose d g {\staffViolon}}
 
 
 \header {
-	title = "Bernies Tunes (Gm)" 
- 	composer = "McCoy Tyner"
- 	tagline = ""
-
+	title = "Bernies Tunes (Gm)"
 }
 
 

@@ -1,6 +1,6 @@
 % Created on Mon Sep 20 15:23:38 CEST 2010
 
-\version "2.20.0"
+\version "2.22.0"
 
 
 #(set-global-staff-size 24)
@@ -79,7 +79,7 @@ theme = \new Staff {
 
  % Type notes here 
 
-\compressFullBarRests
+\compressEmptyMeasures
 
 r2 c'4-^bes8( des~) des1
 

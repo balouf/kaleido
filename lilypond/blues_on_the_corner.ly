@@ -114,13 +114,10 @@ theme=\staffEuph
 
 \header {
 	title = "Blues on the Corner (harmony)" 
- 	composer = "McCoy Tyner"
- 	tagline = ""
-
 }
 
 
-\bookOutputName "Blues_on_The_Corner_harmony"
+\bookOutputName "blues_on_the_corner_harmony"
 
 
 \include "utils/books.ly"

@@ -1,5 +1,5 @@
 % Created on Mon Sep 20 15:23:38 CEST 2010
-\version "2.17.97"
+\version "2.22.0"
 
 #(set-global-staff-size 24)
 #(set-default-paper-size "a4")
@@ -48,7 +48,7 @@ staffViolon = \new Staff {
 	\accidentalStyle modern-cautionary
 	\relative c' { 	
  % Type notes here 
-\compressFullBarRests
+\compressEmptyMeasures
 \partial 4 r4
 \repeat volta 2 {r1^"Intro" r}
 \break
@@ -63,9 +63,9 @@ staffViolon = \new Staff {
 	\once \override Glissando.bound-details.left.Y = #-2
 	r2^"N.C." r16 a g a g8-. f-. \glissando e4
 	\time 4/4
-	f,8[ r16 g]~ g r  <<{bes( b bes8)}{f~ f}>> g16 f d bes 8 r16
+	f,8[ r16 g]~ g r  <<{bes( b bes8)}\\ {f~ f}>> g16 f d bes 8 r16
 	\time 3/4
-	f'8[ r16 g]~ g r <<{bes( b bes8)}{f~ f}>>
+	f'8[ r16 g]~ g r <<{bes( b bes8)}\\ {f~ f}>>
 	\once \override TextScript.extra-offset = #'( 2 . -3.5 )
 	r \coda
 	\time 4/4
@@ -73,7 +73,7 @@ staffViolon = \new Staff {
 \break
 \repeat volta 2
 {
-	\mark \markup {\musicglyph #"scripts.coda"}
+	\mark \markup {\musicglyph "scripts.coda"}
 	r1^"Flute solo" r 
 }
 r4^"On Cue" gis'8[ r16 ais]~ ais[ r b8] r16 cis8 r16
@@ -86,3 +86,10 @@ theme=\staffViolon
 suffix=""
 
 \include "utils/books.ly"
+
+%{
+convert-ly (GNU LilyPond) 2.22.1  convert-ly: Processing `'...
+Applying conversion: 2.18.0, 2.19.2, 2.19.7, 2.19.11, 2.19.16,
+2.19.22, 2.19.24, 2.19.28, 2.19.29, 2.19.32, 2.19.39, 2.19.40,
+2.19.46, 2.19.49, 2.20.0, 2.21.0, 2.21.2, 2.22.0
+%}

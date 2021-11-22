@@ -1,5 +1,5 @@
 % Created on Mon Sep 20 15:23:38 CEST 2010
-\version "2.18.2"
+\version "2.22.0"
 
 #(set-global-staff-size 28)
 #(set-default-paper-size "a4")
@@ -34,7 +34,7 @@ theme = \new Staff {
 	\accidentalStyle "modern-cautionary"
 	\relative c' { 	
  % Type notes here 
-\compressFullBarRests
+\compressEmptyMeasures
 %\set Timing.beamExceptions = #'()
 \partial 8 d8
 \repeat volta 2 {

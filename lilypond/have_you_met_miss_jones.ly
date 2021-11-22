@@ -88,11 +88,10 @@ theme = \staffViolon
 	title = "Have You Met Miss Jones (Bb)" 
  	composer = "Rodgers & Hart"
  	tagline = ""
-
 }
 
 
-\bookOutputName "HaveYouMetMissJonesChant"
+\bookOutputName "have_you_met_miss_jones_chant"
 
 
 accords = {\transpose f bes {\accords}}

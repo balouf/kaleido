@@ -9,7 +9,7 @@
 \paper { indent = 0\cm} 
 
 \header {
-	title = "Dancing on Brid's Grave" 
+	title = "Dancing on Bird's Grave" 
  	composer = "David Liebman"
  	tagline = ""
 
