@@ -21,14 +21,14 @@
 accords = \chords {
   \partial 4. s4.
   \repeat volta 2 {
-  c1:maj7 d2:m7 g:7 aes1 aes:13 g:maj7 g2:m7 c:7
+  c1:maj7 d4:m7 g:7 bes:maj7 a:m7.5- aes1:maj7 aes4:13 b:7 bes:7 a:7 g1:maj7 g2:m7 c:7
   }
   \alternative {{f1:maj7 f2:m7 bes:7}
                 {f:maj7 c:7 f1:7}}
   \break
   bes:m7 es:7 aes:maj7 des:maj7
   d:m7.5- g:7.5+ c:m g:7 \break
-  c1:maj7 d2:m7 g:7 aes1:maj7 s  d:7 g:7 c:maj7 s
+  c1:maj7 d4:m7 g:7 bes:maj7 a:m7.5- aes1:maj7 aes4:13 b:7 bes:7 a:7 d1:7 g:7 c:maj7 s
 }
 
 theme = \new Staff {
@@ -54,7 +54,7 @@ r bes4.~ bes4 gis8 a~
   {a2 r8 e \tuplet 3/2 {f a c} e d r b r d, g d'\laissezVibrer}
   {a2\repeatTie r8 dis, \tuplet 3/2 {e g bes} d c r a r c, f c'~}}
 c2. bes8 g~ g2 r8 bes, es bes'~ bes2. aes8 f~ f2 r8 aes,  d aes'~ \break
-aes2 r8 aes, d aes' r g r es4. d4 es2 f4 fis8 g~ g2 r8 d g d'
+aes2 r8 aes, d aes' r g r es4. d4 es2 f4 fis8 g~ g2 r8 d g d'~
 d2 r8 b16 c b8 a
 b c r d r b r es~
 es2 r8 d16 es d8 c
