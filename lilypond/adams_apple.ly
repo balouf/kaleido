@@ -100,8 +100,8 @@ a8 gis fis e d4~ d1~ d2. cis4~ cis1~ cis
 	}
 \score {
 	<<
-	\transpose es c' {\accords}
-	\transpose es c' {\theme}
+	\transpose dis c {\accords}
+	\transpose dis c {\theme}
 	>>
   \layout {
 \context {
