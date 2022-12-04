@@ -19,7 +19,24 @@
 
 
 accords = \chords {
-d:1
+g2:maj7 a2:7
+b2.:m7
+e2.:7
+b4.:m7 e:7
+a2:5
+b4.:7 fis4.:7
+e2:7 fis4:7
+d2:7 e4:7
+c4.:maj7 f4.:maj7
+d4.:maj7 fis4.:m7
+b4:m7 g4:1 e4:7 d4:7
+c4.:maj7 d4.:7
+g2:maj7 a2:7
+b2.:m7
+e1:7
+b2.:m7
+e1:7
+d1:5
 }
 
 
