@@ -51,7 +51,7 @@ accords = \chords {
   \repeat percent 8 {aes}
   \repeat percent 8 {c:m7}
   \break
-  \repeat percent 4 {aes:m7}
+  \repeat percent 4 {aes}
   \repeat percent 4 {c:m7}  
   }
 }
