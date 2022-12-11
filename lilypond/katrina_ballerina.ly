@@ -70,7 +70,7 @@ des8 bes aes4 es8 f~ f2~ f8 d
   \tuplet 3/2 {c aes' f~} f2
   es8 c bes' d, \tuplet 3/2 {a' bes g~} g2.
   \bar "||" \break
-s2.^"Interlude (before/after solos)" s s s s s s s s
+s2.^"Interlude (before/after solos)" s s s s s s s
 \bar "|."
 }
 }
