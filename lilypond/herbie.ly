@@ -10,29 +10,29 @@
 
 \header {
 	title = "Herbie!" 
- 	composer = "G.B."
+ 	composer = "G.Bellon"
  	tagline = ""
 
 }
 
 
 accords = \chords {
-	e2:m e:7.9- 
+	bes1:m  
 }
 
 theme = {\relative c'{
-  r8 es' c8. bes16 r8 g f16 g8.
-  r8 bes g8. f16~ 8 es r4
-  r r16 es''8. r4 r16 es8. r4  r16 c8. r2
+  r8 des' bes8. as16 r8 f es16 f8.
+  r8 as f8. es16~ 8 des r4
+  r r16 des''8. r4 r16 des8. r4  r16 bes8. r2
   
-  r8 es, c8. bes16 r8 g f16 g8.
-  r8 bes g8. f16~ 8 es r4
-  r r16 es''8. r4 r16 es8. r4  r16 c8. r2
+  r8 des, bes8. as16 r8 f es16 f8.
+  r8 as f8. es16~ 8 des r4
+  r r16 des''8. r4 r16 des8. r4  r16 bes8. r2
   
-  r8 g,8~ 16 as8. a4 bes-. r1
-  r8 g8~ 16 as8. a4 bes-. r1
-  r8 g8~ 16 as8. a4 bes-. 
-  b c des d8. es16 
+  r8 f,8~ 16 ges8. g4 as-. r1
+  r8 f8~ 16 ges8. g4 as-. r1
+  r8 f8~ 16 ges8. g4 as-. 
+  a bes b c8. des16 
   r1 r r r \bar"|."
 }}
 

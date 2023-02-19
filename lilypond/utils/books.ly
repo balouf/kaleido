@@ -12,8 +12,7 @@
   \layout {
 \context {
       \Score
-      \override SpacingSpanner
-      #'common-shortest-duration = #(ly:make-moment 1 2)
+      \override SpacingSpanner.common-shortest-duration = #(ly:make-moment 1 2)
     }
   }
 }
@@ -40,8 +39,7 @@
   \layout {
 \context {
       \Score
-      \override SpacingSpanner
-      #'common-shortest-duration = #(ly:make-moment 1 2)
+      \override SpacingSpanner.common-shortest-duration = #(ly:make-moment 1 2)
     }
   }
 }
@@ -60,8 +58,7 @@
    \layout {
 \context {
       \Score
-      \override SpacingSpanner
-      #'common-shortest-duration = #(ly:make-moment 1 2)
+      \override SpacingSpanner.common-shortest-duration = #(ly:make-moment 1 2)
     }
   }
 }
@@ -105,8 +102,7 @@
    \layout {
 \context {
       \Score
-      \override SpacingSpanner
-      #'common-shortest-duration = #(ly:make-moment 1 2)
+      \override SpacingSpanner.common-shortest-duration = #(ly:make-moment 1 2)
     }
   }
 }

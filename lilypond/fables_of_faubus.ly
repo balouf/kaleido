@@ -29,11 +29,19 @@ ges:m7.5- c:7.5+
 f:maj7.3- des:7.11+
 c:7.5+.9+ bes:7.11+
 aes:7 g:7.5+
+\times 2/3 {s4 g:7 aes:7 a:7 bes:7 b:7}
+c1:7
+\times 2/3 {s4 des:7 d:7 es:7 e:7 f:7}
+c1:7.5+.9+ bes:7.11+ f:maj7.3- s s s
+bes:maj7.3- s ges:maj7.3- s
+bes:maj7.3- s ges:maj7.3- s
+d:maj7.9+.9- g:maj7.9- c:m7.5- f:7.9+
+\repeat unfold 4 {bes4.:7.11+ e2:7.11+ s8}
 }
 
 theme = \new Staff {
 	\time 4/4
-	\tempo 4. = 100 
+	\tempo 4 = 144 
 	\set Staff.midiInstrument = "trumpet"
 	\key aes \major
 	\clef treble
@@ -43,7 +51,7 @@ theme = \new Staff {
 \compressEmptyMeasures
 \override Glissando.style = #'zigzag
 \repeat volta 2 {
-f2\glissando^"Keep on A" aes 
+f2\glissando^"Keep playing on A" aes 
 r8 f aes bes \times 2/3 {b16 c b} bes aes f4
 g2\glissando bes 
 r8 g bes c \times 2/3 {des16 d des} c bes g4
@@ -74,37 +82,20 @@ r8 g^"Repeat to A" bes c \times 2/3 {des16 d des} c bes g4
 es2.. c8 e2.. c8 
 \set Score.repeatCommands = #'((volta #f))
 g'1~ 2 \times 2/3 {aes4 c e}
-g1~  2. \times 2/3 {a,8 bes b}
+g1~  2.^"fine" \times 2/3 {\parenthesize {a,8 bes b} }
+\bar "||"
 \break
 \mark \default
-bes8 8 8 d4 8 
-<<
-  {\voiceOne r8 f f c a f}
-  \new Voice {\voiceTwo c'2.}
->>
-\oneVoice
-bes8 8 8 d4 8
-<<
-  {\voiceOne r8 f f c a f}
-  \new Voice {\voiceTwo c'2.}
->>
-\oneVoice
-bes8 8 8 d4 8 c8. d16 c bes a8 d, f g2. c
-r8 a16 g a g a g f8 d d4 g8 a r4	
-r8 a16 g a g a g f8 d d4 g8 f r4	
-r8 a16 g a g a g f8 d d4 g8 a r4
-f'2.~ 2.~ 
-<<
-  {
-    \voiceOne
-    f2.~ 2.
-  }
-  \new Voice {
-    \voiceTwo
-    r8 f16 d c a g c8. bes8 <a c>2.
-  }
->>
-\oneVoice
+c4. b8 c2~ 4. bes8 c des c bes
+a4. g8 a2~ 2. \times 2/3 {a8 bes b}
+c4. b8 c2~ 4. bes8 es des c bes
+a4. g8 a2~ 4. g8 a bes a g
+f2. es4 ges2. aes4 f2.. es8 aes1
+\repeat unfold 8 {g8 f}
+\repeat unfold 4 {<g des'> <f c'>}
+<g des'> <f c'>^"A, 2nd after B, fine"
+<g des'> <f c'> <g des'> <f c'> <g des'>4
+\bar "|."
 }
 }
 
