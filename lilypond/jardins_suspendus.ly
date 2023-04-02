@@ -42,7 +42,7 @@ staffViolon = \new Staff {
     \repeat volta 2 {
       a''2~ a8 bes \times 2/3 {a   g e}  d4 c a8 c4.         s1 s \break
       a'2~  a8 c   \times 2/3 {aes g f}  d4 c a8 c4.         s1 s \break
-      g'2~  g8 bes \times 2/3 {g   f d}  f8 es4.~ 8 g8 f bes,   c ees4 g8~ 4. f8  b,8 ees2..^"fine"
+      g'2~  g8 bes \times 2/3 {g   f d?}  f8 es4.~ 8 g8 f bes,   c ees4 g8~ 4. f8  b,8 ees2..^"fine"
     } \break
     \mark "B"
     s1 s s s s s s s^"to A, al fine" \bar"||" \break
