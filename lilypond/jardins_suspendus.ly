@@ -1,5 +1,5 @@
 % Created on Mon Sep 20 15:23:38 CEST 2010
-\version "2.22.0"
+\version "2.24.0"
 
 #(set-global-staff-size 28)
 #(set-default-paper-size "a4")
@@ -40,20 +40,20 @@ staffViolon = \new Staff {
   \voiceOne {
     \mark "A"
     \repeat volta 2 {
-      a''2~ a8 bes \times 2/3 {a   g e}  d4 c a8 c4.         r1 r \break
-      a'2~  a8 c   \times 2/3 {aes g f}  d4 c a8 c4.         r1 r \break
-      g'2~  g8 bes \times 2/3 {g   f d}  f8 ees2 g8 f bes,   c ees4 g2 f8  b,8 ees2..^"fine"
+      a''2~ a8 bes \times 2/3 {a   g e}  d4 c a8 c4.         s1 s \break
+      a'2~  a8 c   \times 2/3 {aes g f}  d4 c a8 c4.         s1 s \break
+      g'2~  g8 bes \times 2/3 {g   f d}  f8 es4.~ 8 g8 f bes,   c ees4 g8~ 4. f8  b,8 ees2..^"fine"
     } \break
     \mark "B"
     s1 s s s s s s s^"to A, al fine" \bar"||" \break
   }
   \new Voice {
-    \override NoteHead #'color = #red
+    \override NoteHead.color = #red
     \voiceTwo
     \repeat volta 2 {
-      r1 r a,4. bes4 a8 g e   d c4 a c4. \break
-      r1 r a'4. c4 aes8 g f   d c4 a c4. \break
-      r1 a'2 bes8 a f ees   g ees4 c2 ees8   aes g2..
+      s1 s a,4. bes4 a8 g e   d c4 a c4. \break
+      s1 s a'4. c4 aes8 g f   d c4 a c4. \break
+      s1 a'2 bes8 a f ees   g ees4 c8~ 4. ees8   aes g2..
     } \break
 
     s1 s s s s s s s \bar"||" \break
