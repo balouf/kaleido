@@ -17,7 +17,11 @@
 
 
 accords = \chords {
-	bes1:m  
+  bes1:m
+  s1*7
+  des1:m
+  s1*4
+  des4 ges ces fes
 }
 
 theme = {\relative c'{
