@@ -66,7 +66,7 @@ sopran = \new Staff {
   r8 <e, b' cis>8 <e b' cis>4
   d'8 g4 d8
   r8 <f, c' d>8 <f c' d>4 <f c' d>4
-  ees'8 aes4 ees4 aes8
+  ees'8 aes4 ees4 aes8^"fine"
   r8 <e, bes' dis>8 <e bes' dis>4
 }
 	}
