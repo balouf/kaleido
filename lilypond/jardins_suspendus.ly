@@ -6,10 +6,10 @@
 
 \include "utils/AccordsJazzDefs.ly"
 
-\paper { indent = 0\cm} 
+\paper { indent = 0\cm}
 
 \header {
-	title = "Les jardins suspendus" 
+	title = "Les jardins suspendus"
  	composer = "BL"
  	tagline = ""
 
@@ -20,20 +20,20 @@ accords = \chords {
   \repeat volta 2 {
   d1:sus4.7 d:sus4.7.9/bes d:sus4.7 d:sus4.7.9/bes
   g1:sus4.7 g:sus4.7.9/ees g:sus4.7 g:sus4.7.9/ees
-  c1:sus4.7 bes:sus4.7 aes:maj g:9+.13-
+  des1:7 bes:sus4.7 aes:maj g:9+.13-
   }
   c1:sus4.7 s s s s s a:8 s
 }
 
 staffViolon = \new Staff {
 	\time 4/4
-	\tempo 4 = 144 
+	\tempo 4 = 144
 	\set Staff.midiInstrument = "trumpet"
 	\key d \minor
 	\clef treble
 	\accidentalStyle "modern-cautionary"
-	\relative c' { 	
- % Type notes here 
+	\relative c' {
+ % Type notes here
 \compressEmptyMeasures
 \set Timing.beamExceptions = #'()
 <<
