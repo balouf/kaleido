@@ -46,10 +46,10 @@ theme = \new Staff {
 \compressEmptyMeasures
 \repeat volta 2 {
 	a8^"Theme" b c16 e r8 a,8 b c16 e r8
-a,8 b c16 a'8. aes8 b a16 e r8
+a,8 b c16 a'8. gis8 b a16 e r8
 a,8 b c16 e r8 a,8 b c16 e r8
 <<
-{e8 f aes16 a b c d8 \tuplet 3/2 {c16 d c} b a r8}
+{e8 f gis16 a b c d8 \tuplet 3/2 {c16 d c} b a r8}
 {a8 b c16 d e f g8 \tuplet 3/2 {f16 g f} e c r8}
 >>
 }
@@ -84,8 +84,8 @@ d8. c16 r8 b r4 g'
 	e e r8 r4 r4. e8
 	f16 f r8 e4 d g
 }
-<<{c16 c}{a a}>> r8 r <<{c16 c}{a a}>> r4 <<{c16 b bes a}{a aes g ges}>>
-<<{aes16 aes}{f f}>> r8 r <<{aes16 aes}{f f}>> r4  <<{aes16 aes}{f f}>> r8 
+<<{c16 c}{a a}>> r8 r <<{c16 c}{a a}>> r4 <<{c16 b bes a}{a gis g fis}>>
+<<{aes16 aes}{f f}>> r8 r <<{aes16 aes}{f f}>> r4  <<{aes16 aes}{f f}>> r8
 	}
 }
 
