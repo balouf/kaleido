@@ -53,7 +53,7 @@ staffViolon = \new Staff {
     \repeat volta 2 {
       s1 s a,4. bes4 a8 g e   d c4 a c4. \break
       s1 s a'4. c4 aes8 g f   d c4 a c4. \break
-      s1 a'2 bes8 a f ees   g ees4 c8~ 4. ees8   aes g2..
+      s1 aes'2 bes8 aes f ees   g ees4 c8~ 4. ees8   aes g2..
     } \break
 
     s1 s s s s s s s \bar"||" \break
