@@ -51,7 +51,7 @@ bes8 aes f es ces' bes aes f
 aes2 f
 \tuplet 3/2 {c'4 bes aes} \tuplet 3/2 {f es c}
 }
-f1\fermata \bar "|."
+f1\fermata ^"(fine)" \bar "|."
 \break
 %c4^\markup{Essai} cis c cis
 %\mark \markup {\musicglyph "scripts.coda" }
