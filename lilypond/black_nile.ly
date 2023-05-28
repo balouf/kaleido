@@ -71,7 +71,7 @@ c bes4 a8~ a f r4
 r8 g'4.-> c,2
 f4.-> bes,8~ bes2
 <ges bes>4-. <ges bes>8( <f a> <ges bes>
-<f c'>4.->)~ <f c'>1
+<f c'>4.^>)~ <f c'>1
 \repeat volta 2 {
 	a1^"Theme"
 	r4 bes8( a bes c4.->)
