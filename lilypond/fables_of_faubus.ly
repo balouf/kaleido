@@ -1,102 +1,254 @@
 % Created on Mon Sep 20 15:23:38 CEST 2010
 \version "2.22.0"
 
-#(set-global-staff-size 26)
+#(set-global-staff-size 22)
 #(set-default-paper-size "a4")
-
 
 \include "utils/AccordsJazzDefs.ly"
 
-\paper { indent = 0\cm} 
-
+\paper { indent = 0\cm}
 
 \header {
-	title = "Fables of Faubus" 
- 	composer = "Charlie Mingus"
- 	tagline = ""
+  title = "Fables of Faubus"
+  composer = "Charlie Mingus"
+  tagline = ""
+}
 
+globals = {
+  \time 4/4
+  \tempo 4 = 144
+  \key aes \major
+  \accidentalStyle modern-cautionary
+  \compressEmptyMeasures
 }
 
 
 accords = \chords {
   \repeat volta 2 {
-  bes1:m7 s des:7.11+ s
+    bes1:m7 s des:7.11+ s
   }
   \repeat volta 2 {
-  bes1:m7 s des:7.11+
+    bes1:m7 s des:7.11+
   } \alternative {{s}{s}}
-ges:m7.5- c:7.5+
-f:maj7.3- des:7.11+
-c:7.5+.9+ bes:7.11+
-aes:7 g:7.5+
-\times 2/3 {s4 g:7 aes:7 a:7 bes:7 b:7}
-c1:7
-\times 2/3 {s4 des:7 d:7 es:7 e:7 f:7}
-c1:7.5+.9+ bes:7.11+ f:maj7.3- s s s
-bes:maj7.3- s ges:maj7.3- s
-bes:maj7.3- s ges:maj7.3- s
-d:maj7.9+.9- g:maj7.9- c:m7.5- f:7.9+
-\repeat unfold 4 {bes4.:7.11+ e2:7.11+ s8}
+  ges:m7.5- c:7.5+
+  f:maj7.3- des:7.11+
+  c:7.5+.9+ bes:7.11+
+  aes:7 g:7.5+
+  \times 2/3 {s4 g:7 aes:7 a:7 bes:7 b:7}
+  c1:7
+  \times 2/3 {s4 des:7 d:7 es:7 e:7 f:7}
+  c1:7.5+.9+ bes:7.11+ f:maj7.3- s s s
+  bes:maj7.3- s ges:maj7.3- s
+  bes:maj7.3- s ges:maj7.3- s
+  d:maj7.9+.9- g:maj7.9- c:m7.5- f:7.9+
+  \repeat unfold 4 {
+    bes4.:7.11+ e2:7.11+ s8
+  }
 }
 
-theme = \new Staff {
-	\time 4/4
-	\tempo 4 = 144 
-	\set Staff.midiInstrument = "trumpet"
-	\key aes \major
-	\clef treble
-	\accidentalStyle modern-cautionary
-	\relative c' { 	
- % Type notes here 
-\compressEmptyMeasures
-\override Glissando.style = #'zigzag
-\repeat volta 2 {
-f2\glissando^"Keep playing on A" aes 
-r8 f aes bes \times 2/3 {b16 c b} bes aes f4
-g2\glissando bes 
-r8 g bes c \times 2/3 {des16 d des} c bes g4
-}
-\break
-\mark \default
-\repeat volta 2{
-  bes4-^ 4-- 4-^ 4--
-  r aes8. bes16 c8. bes16 aes4
-  f4-^ 2.--}
-\alternative{
-{f4-^ 2.--
+soufflants_intro_up = \relative c' {
+  \override Glissando.style = #'zigzag
+  \repeat volta 2 {
+    f2\glissando aes
+    r8 f aes bes \times 2/3 {b16 c b} bes aes f4
+    g2\glissando bes
+    r8 g bes c \times 2/3 {des16 d des} c bes g4
   }
-{f4-^ 4--~ 8 c \times 2/3 {des e g}
 }
+soufflants_intro_down = \relative c' {
+  \override Glissando.style = #'zigzag
+  \transpose c a, \soufflants_intro_up
 }
-\break
-\mark \default
-aes1~ 8 c, \times 2/3 {des f aes} des bes g e
-g4. g8 \times 2/3 {bes4 aes g8 f}
-g4. f8 aes g f c
-\break
-\set Score.repeatCommands = #'((volta "1"))
-es2.. c8 e2.. c8 f2.. c8 ges'1~ 1
-g2\glissando bes 
-r8 g^"Repeat to A" bes c \times 2/3 {des16 d des} c bes g4
-\set Score.repeatCommands = #'((volta #f) (volta "2") end-repeat)
-es2.. c8 e2.. c8 
-\set Score.repeatCommands = #'((volta #f))
-g'1~ 2 \times 2/3 {aes4 c e}
-g1~  2.^"fine" \times 2/3 {\parenthesize {a,8 bes b} }
-\bar "||"
-\break
-\mark \default
-c4. b8 c2~ 4. bes8 c des c bes
-a4. g8 a2~ 2. \times 2/3 {a8 bes b}
-c4. b8 c2~ 4. bes8 es des c bes
-a4. g8 a2~ 4. g8 a bes a g
-f2. es4 ges2. aes4 f2.. es8 aes1
-\repeat unfold 8 {g8 f}
-\repeat unfold 4 {<g des'> <f c'>}
-<g des'> <f c'>^"A, 2nd after B, fine"
-<g des'> <f c'> <g des'> <f c'> <g des'>4
-\bar "|."
+
+soufflants_a_up = \relative c' {
+  \override Glissando.style = #'zigzag
+  \break
+  \mark \default
+  \repeat volta 2 {
+    f2\glissando aes
+    r8 f aes bes \times 2/3 {b16 c b} bes aes f4
+    g2\glissando bes
+  }
+  \alternative {
+    { r8 g bes c \times 2/3 {des16 d des} c bes g4 }
+    { r8 g bes c des8 }
+  }
 }
+soufflants_a_down = \relative c' {
+  \override Glissando.style = #'zigzag
+  \transpose c a, \soufflants_a_up
 }
+
+soufflants_b = \relative c' {
+  \partial 4. c8 \times 2/3 {des8 e g}
+  \break
+  \mark \default
+  aes1~ 8 c, \times 2/3 {des f aes} des bes g e
+  g4. g8 \times 2/3 {bes4 aes g8 f}
+  g4. f8 aes g f c
+  \set Score.repeatCommands = #'((volta "1"))
+  es2.. c8 e2.. c8 f2.. c8 ges'1~ 1
+  <<
+    \voiceOne {
+      g2\glissando bes
+      r8 g bes c \times 2/3 {des16 d des} c bes g4
+      \textEndMark "Repeat to A"
+    }
+    \new Voice {
+      \override NoteHead.color = #red
+      \voiceTwo \transpose c a, \relative c'' {
+        g2\glissando bes
+        r8 g bes c \times 2/3 {des16 d des} c bes g4
+      }
+    }
+  >>
+  \oneVoice
+  \set Score.repeatCommands = #'((volta #f) (volta "2") end-repeat)
+  es2.. c8 e2.. c8
+  \set Score.repeatCommands = #'((volta #f))
+  g'1~ 2 \times 2/3 {aes4 c e}
+  g1~
+  2.^"fine"
+}
+
+soufflants_c = \relative c'' {
+  \partial 4 \times 2/3 { a8 bes b }
+  \break
+  \mark \default
+  \bar "||"
+  c4. b8 c2~ 4. bes8 c des c bes
+  a4. g8 a2~ 2. \times 2/3 {a8 bes b}
+  c4. b8 c2~ 4. bes8 es des c bes
+  a4. g8 a2~ 4. g8 a bes a g
+  f2.^"double time" es4 ges2. aes4 f2.. es8 aes1
+  \repeat unfold 8 {g8 f}
+  \repeat unfold 4 {<g des'> <f c'>}
+  <g des'> <f c'>
+  <g des'>^"A, 2nd B, fine"
+  <f c'> <g des'> <f c'> <g des'>4
+  \tweak direction #DOWN
+  \textEndMark "after solos: C, A, 2nd B, fine"
+}
+
+soufflants = \new Staff \with { \consists "Merge_rests_engraver" } {
+  \globals
+  \set Staff.midiInstrument = "trumpet"
+  \clef treble
+
+  <<
+    \voiceOne \soufflants_intro_up
+    \new Voice {
+      \override NoteHead.color = #red
+      \voiceTwo \soufflants_intro_down
+    }
+  >>
+
+
+  <<
+    \voiceOne \soufflants_a_up
+    \new Voice {
+      \override NoteHead.color = #red
+      \voiceTwo \soufflants_a_down
+    }
+  >>
+  \oneVoice
+
+  \soufflants_b
+
+  \soufflants_c
+
+  \bar "|."
+}
+
+piano_up_a = \relative c'' {
+  R1*4
+  \repeat volta 2 {
+    <bes bes'>4-^ 4-- 4-^ 4--
+    r <aes aes'>8. <bes bes'>16 <c c'>8. <bes bes'>16 <aes aes'>4
+    <f f'>4-^ 2.--
+  } \alternative {
+    { <f f'>4-^ 2.-- }
+    { <f f'>4-^ 2.-- }
+  }
+}
+
+piano_down_a = \relative c' {
+  R1*4
+  \repeat volta 2 {
+    <aes c des f>4 <aes c des f>4 <aes c des f>4 <aes c des f>4
+    r c8. des16 es8. des16 c4
+    <f, bes ces es>4 2.
+  } \alternative {
+    { <f bes ces es>4 2. }
+    { <f bes ces es>4 2. }
+  }
+}
+
+piano_up_b = \relative c'' {
+  \improvisationOn
+  r2 r4 b8 b~
+  b2 r
+  b2 \times 2/3 { r4 b b }
+  b2 r
+  \repeat unfold 4 {
+    r4 r8 b8~ b2
+  }
+  \times 2/3 { r4^"on solos" b b } \times 2/3 { b4 b b }
+  R1
+  \times 2/3 { r4 b b } \times 2/3 { b4 b b }
+  \repeat unfold 2 {
+    r4 r8 b8~ b2
+  }
+  r8 b r4 b r
+  b4 r8 b~ b4 b8 b
+  b8 b r4 b r
+  b4 r8 b~ b2
+  \improvisationOff
+}
+
+piano_down_b = \relative c' {
+  s1*11 s1*6
+}
+
+piano_up_c = \relative c'' {
+  s1*8
+  s1*8
+  ^"free form solo"
+}
+
+piano_down_c = \relative c' {
+  s1*16
+}
+
+piano_up = {
+  \piano_up_a
+  \piano_up_b
+  \piano_up_c
+}
+piano_down = {
+  \piano_down_a
+  \piano_down_b
+  \piano_down_c
+}
+
+piano = \new PianoStaff <<
+  \new Staff = "upper" {
+    \globals
+    \set Staff.midiInstrument = "trumpet"
+    \clef treble
+    \piano_up
+  }
+  \new Staff = "lower" {
+    \globals
+    \set Staff.midiInstrument = "trumpet"
+    \clef bass
+    \piano_down
+  }
+>>
+
+theme = <<
+  \soufflants
+  \piano
+>>
 
 \include "utils/books.ly"
