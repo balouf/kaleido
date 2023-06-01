@@ -121,7 +121,7 @@ soufflants_c = \relative c'' {
   c4. b8 c2~ 4. bes8 es des c bes
   a4. g8 a2~ 4. g8 a bes a g
   f2.^"double time" es4 ges2. aes4 f2.. es8 aes1
-  \repeat unfold 8 {g8 f}
+  g8^"regular time" f \repeat unfold 7 {g8 f}
   \repeat unfold 4 {<g des'> <f c'>}
   <g des'> <f c'>
   <g des'>^"A, 2nd B, fine"
@@ -212,8 +212,13 @@ piano_down_b = \relative c' {
 
 piano_up_c = \relative c'' {
   s1*8
-  s1*8
-  ^"free form solo"
+  s1^"free form solo"
+  s1*3
+  \improvisationOn
+  \repeat unfold 4 {
+    b4 r8 b8 r2
+  }
+  \improvisationOff
 }
 
 piano_down_c = \relative c' {
