@@ -14,6 +14,13 @@
   tagline = ""
 }
 
+\layout {
+  \context {
+    \Score
+    \RemoveAllEmptyStaves
+  }
+}
+
 globals = {
   \time 4/4
   \tempo 4 = 144
@@ -21,7 +28,6 @@ globals = {
   \accidentalStyle modern-cautionary
   \compressEmptyMeasures
 }
-
 
 accords = \chords {
   \repeat volta 2 {
@@ -91,8 +97,7 @@ soufflants_b = \relative c' {
   <<
     \voiceOne {
       g2\glissando bes
-      r8 g bes c \times 2/3 {des16 d des} c bes g4
-      \textEndMark "Repeat to A"
+      r8 g bes c \times 2/3 {des16_"Repeat to A" d des} c bes g4
     }
     \new Voice {
       \override NoteHead.color = #red
@@ -114,13 +119,14 @@ soufflants_b = \relative c' {
 soufflants_c = \relative c'' {
   \partial 4 \times 2/3 { a8 bes b }
   \break
+  \pageBreak
   \mark \default
   \bar "||"
   c4. b8 c2~ 4. bes8 c des c bes
   a4. g8 a2~ 2. \times 2/3 {a8 bes b}
   c4. b8 c2~ 4. bes8 es des c bes
   a4. g8 a2~ 4. g8 a bes a g
-  f2.^"double time" es4 ges2. aes4 f2.. es8 aes1
+  f2.^"double time"_"voice 2: free form solo" es4 ges2. aes4 f2.. es8 aes1
   g8^"regular time" f \repeat unfold 7 {g8 f}
   \repeat unfold 4 {<g des'> <f c'>}
   <g des'> <f c'>
@@ -160,11 +166,17 @@ soufflants = \new Staff \with { \consists "Merge_rests_engraver" } {
   \bar "|."
 }
 
-piano_up_a = \relative c'' {
+piano_a = \relative c'' {
   R1*4
   \repeat volta 2 {
     <bes bes'>4-^ 4-- 4-^ 4--
-    r <aes aes'>8. <bes bes'>16 <c c'>8. <bes bes'>16 <aes aes'>4
+    <<
+      \voiceOne { r <aes aes'>8. <bes bes'>16 <c c'>8. <bes bes'>16 <aes aes'>4 }
+      \new Voice {
+        \voiceTwo { r c,8. des16 es8. des16 c4 }
+      }
+    >>
+    \oneVoice
     <f f'>4-^ 2.--
   } \alternative {
     { <f f'>4-^ 2.-- }
@@ -172,19 +184,7 @@ piano_up_a = \relative c'' {
   }
 }
 
-piano_down_a = \relative c' {
-  R1*4
-  \repeat volta 2 {
-    <aes c des f>4 <aes c des f>4 <aes c des f>4 <aes c des f>4
-    r c8. des16 es8. des16 c4
-    <f, bes ces es>4 2.
-  } \alternative {
-    { <f bes ces es>4 2. }
-    { <f bes ces es>4 2. }
-  }
-}
-
-piano_up_b = \relative c'' {
+piano_b = \relative c'' {
   \improvisationOn
   r2 r4 b8 b~
   b2 r
@@ -206,13 +206,9 @@ piano_up_b = \relative c'' {
   \improvisationOff
 }
 
-piano_down_b = \relative c' {
-  s1*11 s1*6
-}
-
-piano_up_c = \relative c'' {
+piano_c = \relative c'' {
   s1*8
-  s1^"free form solo"
+  s1
   s1*3
   \improvisationOn
   \repeat unfold 4 {
@@ -221,35 +217,14 @@ piano_up_c = \relative c'' {
   \improvisationOff
 }
 
-piano_down_c = \relative c' {
-  s1*16
+piano = \new Staff \with { \consists "Merge_rests_engraver" } {
+  \globals
+  \set Staff.midiInstrument = "trumpet"
+  \clef treble
+  \piano_a
+  \piano_b
+  \piano_c
 }
-
-piano_up = {
-  \piano_up_a
-  \piano_up_b
-  \piano_up_c
-}
-piano_down = {
-  \piano_down_a
-  \piano_down_b
-  \piano_down_c
-}
-
-piano = \new PianoStaff <<
-  \new Staff = "upper" {
-    \globals
-    \set Staff.midiInstrument = "trumpet"
-    \clef treble
-    \piano_up
-  }
-  \new Staff = "lower" {
-    \globals
-    \set Staff.midiInstrument = "trumpet"
-    \clef bass
-    \piano_down
-  }
->>
 
 theme = <<
   \soufflants
