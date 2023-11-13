@@ -31,7 +31,7 @@ accords = \chords {
   }
   \alternative {
   {des2..:7.9+ bes1:7.9+ a:7 aes:7.5+.9+ s8}
-  {des2..:7.9+ bes1:7.9+ a:7 fis:m/a des8:7.9+ s1 s1}
+  {des2..:7.9+ bes1:7.9+ a:7 fis:m/aes des8:7.9+ s1 s1}
   {des2..:7.9+ bes1:7.9+ a:7 fis:m7 bes2:7.9+ a:7 fis1:m7/aes des:7.9+ s8}
   }
   \repeat volta 2 {
