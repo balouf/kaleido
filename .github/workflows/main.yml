@@ -1,0 +1,43 @@
+# This workflow will generate the docs on each push, and publish them on GitHub Pages if the branch is the main one.
+name: main
+
+on: [push]
+
+permissions:
+  contents: write
+
+jobs:
+  docs:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+
+      - name: Set up python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install dependencies
+        run : |
+          sudo apt update
+          sudo apt install wget
+          wget https://gitlab.com/lilypond/lilypond/-/releases/v2.24.2/downloads/lilypond-2.24.2-linux-x86_64.tar.gz
+          tar xvzf lilypond-2.24.2-linux-x86_64.tar.gz
+          mkdir ~/.fonts
+          cp ./lilypond/utils/lilyjazzchord.otf ~/.fonts/
+          pip install tqdm
+
+      - name: Compile files
+        run: |
+          python deploy.py
+
+      - name: Deploy Sphinx documentation on Github Pages
+        uses: JamesIves/github-pages-deploy-action@v4
+        if: github.ref == 'refs/heads/master'
+        with:
+          BRANCH: gh-pages
+          FOLDER: build/
+          SINGLE-COMMIT: true
