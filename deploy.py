@@ -3,6 +3,7 @@ from tempfile import TemporaryDirectory
 import subprocess
 from collections import defaultdict
 from tqdm.auto import tqdm
+from datetime import datetime, timezone
 from zipfile import ZipFile
 import re
 
@@ -11,7 +12,9 @@ rbook = re.compile(r'\\bookOutputName\s+"(.*)"')
 
 input_files = [file for file in Path('lilypond').glob('*.ly')]
 stem2name = dict()
+name2time = dict()
 for file in input_files:
+    mtime = datetime.fromtimestamp(file.stat().st_mtime, tz=timezone.utc)
     with open(file, encoding='utf8') as f:
         source = f.read()
         title = rtitle.findall(source)
@@ -19,8 +22,10 @@ for file in input_files:
         if len(title)-len(book) != 1:
             raise ValueError(f"File {file} has not the correct number of titles / outputnames.")
         stem2name[file.stem] = title[0]
+        name2time[title[0]] = mtime
         for name, stem in zip(title[1:], book):
             stem2name[stem] = name
+            name2time[name] = mtime
 
 dest = Path('build')
 dest.mkdir(exist_ok=True)
@@ -54,7 +59,7 @@ for extension, files in archives.items():
 
 partition_template = """
     <div class="sheet-item">
-        <strong>%(title)s</strong>
+        <strong>%(title)s</strong> (last modif: %(mtime)s)
         <div class="download-links">
 %(links)s
         </div>
@@ -67,7 +72,7 @@ partitions = []
 for title in sorted(names.keys()):
     versions = names[title]
     links = " | ".join(link_template % {'file': file, 'version': version} for version, file in versions.items())
-    partitions.append(partition_template % {'title': title, 'links': links})
+    partitions.append(partition_template % {'title': title, 'links': links, 'mtime': name2time[title]})
 
 html_partitions = '\n'.join(partitions)
 
