@@ -9,7 +9,7 @@
 \paper { indent = 0\cm} 
 
 \header {
-	title = "if I Were A Bell" 
+	title = "If I Were A Bell"
  	composer = "Frank Loesser"
  	tagline = ""
 
