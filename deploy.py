@@ -58,12 +58,14 @@ for extension, files in archives.items():
             myzip.write(filename=str(dest / file), arcname=file)
 
 partition_template = """
-    <div class="sheet-item">
-        <strong>%(title)s</strong> (last modif: %(mtime)s)
+<tr>
+<td>
+<div class="sheet-item">
+        <strong>%(title)s</strong>
         <div class="download-links">
 %(links)s
-        </div>
-    </div>
+</div>
+</td><td>%(mtime)s</td></tr>
 """
 
 link_template = '<a href="%(file)s">%(version)s</a>'
@@ -93,6 +95,26 @@ html = """
         .download-links { margin-top: 5px; }
         a { text-decoration: none; color: blue; }
         a:hover { text-decoration: underline; }
+        table {
+            width: 100%%;
+            border-collapse: collapse;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            cursor: pointer;
+            background-color: #f2f2f2;
+        }
+        th.sort-asc::after {
+            content: " ▲";
+        }
+        th.sort-desc::after {
+            content: " ▼";
+        }
+   
     </style>
 </head>
 <body>
@@ -105,7 +127,59 @@ html = """
 </div>
 
 <h2> Partitions individuelles </h2>
-%s
+
+    <table id="partitionTable">
+        <thead>
+            <tr>
+                <th data-sort="name">Name</th>
+                <th data-sort="date">Last Modification</th>
+            </tr>
+        </thead>
+        <tbody>
+            %s
+        </tbody>
+    </table>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const table = document.getElementById('partitionTable');
+            const headers = table.querySelectorAll('th');
+            
+            headers.forEach(header => {
+                header.addEventListener('click', () => {
+                    const sortType = header.dataset.sort;
+                    const isAscending = header.classList.contains('sort-asc');
+                    sortTable(table, sortType, !isAscending);
+                    
+                    headers.forEach(h => h.classList.remove('sort-asc', 'sort-desc'));
+                    header.classList.toggle('sort-asc', !isAscending);
+                    header.classList.toggle('sort-desc', isAscending);
+                });
+            });
+        });
+
+        function sortTable(table, type, asc) {
+            const tbody = table.querySelector('tbody');
+            const rows = Array.from(tbody.rows);
+
+            rows.sort((rowA, rowB) => {
+                let valA = rowA.cells[type === 'name' ? 0 : 1].textContent.trim();
+                let valB = rowB.cells[type === 'name' ? 0 : 1].textContent.trim();
+
+                if (type === 'date') {
+                    valA = new Date(valA);
+                    valB = new Date(valB);
+                }
+
+                return (valA > valB ? 1 : -1) * (asc ? 1 : -1);
+            });
+
+            tbody.innerHTML = '';
+            rows.forEach(row => tbody.appendChild(row));
+        }
+    </script>
+</body>
+</html>
 """ % (html_archives, html_partitions)
 
 with open(dest / 'index.html', 'wt', encoding='utf8') as f:
