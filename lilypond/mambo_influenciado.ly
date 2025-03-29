@@ -11,7 +11,7 @@
 \header {
 	title = "Mambo Influenciado" 
  	composer = "Chucho Valdés"
- 	tagline = ""
+ 	tagline =  ""
 
 }
 
