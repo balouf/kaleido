@@ -39,7 +39,7 @@ theme = \new Staff {
  % Type notes here 
 \compressEmptyMeasures
 % \set Timing.beamExceptions = #'()
-\partial 4 es'8 8
+\partial 4 es8 8
 \repeat volta 2 {
 bes'2. g4 es2 r4 8 aes c2. bes4 es,2 r4
 8 c'8 2 bes aes g4. f8 c2 bes4. es,8 aes2 g
