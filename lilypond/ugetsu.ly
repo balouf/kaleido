@@ -15,7 +15,7 @@
   )} 
 
 \header {
-	title = "Ugestu" 
+	title = "Ugetsu" 
  	composer = "Cedar Walton"
  	tagline = ""
 
