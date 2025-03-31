@@ -13,6 +13,12 @@ trio = #(define-music-function (notes) (ly:music?)
   #})
 
 
+
+rythme = #(define-music-function (notes) (ly:music?)
+  #{
+    ^\markup { \rhythm { \improvisationOn #notes \improvisationOff } }
+  #}) 
+
 rythm = #(define-music-function (notes) (ly:music?)
   #{
     ^\markup {
