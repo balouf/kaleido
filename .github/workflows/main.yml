@@ -36,7 +36,7 @@ jobs:
 
       - name: Compile files
         run: |
-          python deploy.py
+          python deploy.py -l "./lilypond-2.24.2/bin/lilypond"
 
       - name: Deploy Sphinx documentation on Github Pages
         uses: JamesIves/github-pages-deploy-action@v4
