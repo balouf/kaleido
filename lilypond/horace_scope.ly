@@ -32,7 +32,7 @@ accords = \chords {
   \alternative {
   {des2..:7.9+ bes1:7.9+ a:7 aes:7.5+.9+ s8}
   {des2..:7.9+ bes1:7.9+ a:7 fis:m/aes des8:7.9+ s1 s1}
-  {des2..:7.9+ bes1:7.9+ a:7 fis:m7 bes2:7.9+ a:7 fis1:m7/aes des:7.9+ s8}
+  {des2..:7.9+ bes1:7.9+ a:7 fis:m7 bes2:7.9+ a:7 fis1:m7/aes des8:7.9+}
   }
   \repeat volta 2 {
   des1:maj7 e2:m7 a:7
@@ -97,7 +97,7 @@ fes des fes fes des fes des fes~
 fes8 des fes2 des8 fes~
 fes des fes fes des fes des fes~
 fes des fes2 des8 fes~
-fes des fes fes des fes des <ces fes>~ <ces fes>1\fermata^"fine" \break}
+fes des fes fes des fes des <ces fes>^"fine" \bar "|." \break}
 }
 
 \break \mark \default
