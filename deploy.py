@@ -160,7 +160,20 @@ def run_everything(lily, source, dest):
             th.sort-desc::after {
                 content: " ▼";
             }
-       
+           /* Alternate row colors */
+            #partitionTable tbody tr:nth-child(even) {
+                background-color: #f9f9f9;
+            }
+            
+            #partitionTable tbody tr:nth-child(odd) {
+                background-color: #ffffff;
+            }
+            
+            /* Highlight row on mouse hover */
+            #partitionTable tbody tr:hover {
+                background-color: #dde8ff;
+            }
+
         </style>
     </head>
     <body>
@@ -190,53 +203,61 @@ def run_everything(lily, source, dest):
     
         <script>
         document.addEventListener('DOMContentLoaded', () => {
-            const table = document.getElementById('partitionTable');
-            const headers = table.querySelectorAll('th');
-            
-            headers.forEach(header => {
-                // Skip sorting if data-sort="alt"
-                if (header.dataset.sort === 'alt') return;
-                
-                header.addEventListener('click', () => {
-                    const sortType = header.dataset.sort;
-                    const isAscending = header.classList.contains('sort-asc');
-                    sortTable(table, sortType, !isAscending);
-                    headers.forEach(h => h.classList.remove('sort-asc', 'sort-desc'));
-                    header.classList.toggle('sort-asc', !isAscending);
-                    header.classList.toggle('sort-desc', isAscending);
-                });
+          const table = document.getElementById('partitionTable');
+          const headers = table.querySelectorAll('th');
+        
+          headers.forEach(header => {
+            // Skip non-sortable column
+            if (header.dataset.sort === 'alt') return;
+        
+            header.addEventListener('click', () => {
+              const sortType = header.dataset.sort;
+        
+              // If header has no direction yet, choose default per column
+              const hasDirection = header.classList.contains('sort-asc') || header.classList.contains('sort-desc');
+              const nextAsc = hasDirection
+                ? header.classList.contains('sort-desc') // toggle
+                : (sortType !== 'date');                 // default: date -> desc, others -> asc
+        
+              sortTable(table, sortType, nextAsc);
+        
+              // Update indicator classes
+              headers.forEach(h => h.classList.remove('sort-asc', 'sort-desc'));
+              header.classList.toggle('sort-asc', nextAsc);
+              header.classList.toggle('sort-desc', !nextAsc);
             });
+          });
         });
         
         function sortTable(table, type, asc) {
-            const tbody = table.querySelector('tbody');
-            const rows = Array.from(tbody.rows);
-            
-            rows.sort((rowA, rowB) => {
-                let valA, valB;
-                switch(type) {
-                    case 'name':
-                        valA = rowA.cells[0].textContent.trim();
-                        valB = rowB.cells[0].textContent.trim();
-                        break;
-                    case 'author':
-                        valA = rowA.cells[2].textContent.trim();
-                        valB = rowB.cells[2].textContent.trim();
-                        break;
-                    case 'date':
-                        valA = new Date(rowA.cells[3].textContent.trim());
-                        valB = new Date(rowB.cells[3].textContent.trim());
-                        break;
-                    default:
-                        valA = '';
-                        valB = '';
-                }
-                if (valA > valB) return asc ? 1 : -1;
-                if (valA < valB) return asc ? -1 : 1;
-                return 0;
-            });
-            
-            rows.forEach(row => tbody.appendChild(row));
+          const tbody = table.querySelector('tbody');
+          const rows = Array.from(tbody.rows);
+        
+          rows.sort((rowA, rowB) => {
+            let valA, valB;
+            switch (type) {
+              case 'name':
+                valA = rowA.cells[0].textContent.trim();
+                valB = rowB.cells[0].textContent.trim();
+                break;
+              case 'author':
+                valA = rowA.cells[2].textContent.trim();
+                valB = rowB.cells[2].textContent.trim();
+                break;
+              case 'date':
+                valA = new Date(rowA.cells[3].textContent.trim());
+                valB = new Date(rowB.cells[3].textContent.trim());
+                break;
+              default:
+                valA = '';
+                valB = '';
+            }
+            if (valA > valB) return asc ? 1 : -1;
+            if (valA < valB) return asc ? -1 : 1;
+            return 0;
+          });
+        
+          rows.forEach(row => tbody.appendChild(row));
         }
         </script>
     </body>
