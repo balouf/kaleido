@@ -11,7 +11,7 @@
 
 \header {
 	title = "The Maze" 
- 	composer = "By Herbie Hancock"
+ 	composer = "Herbie Hancock"
  	tagline = ""
 
 }

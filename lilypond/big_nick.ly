@@ -11,7 +11,7 @@
 
 \header {
 	title = "Big Nick" 
- 	composer = "Coltrane"
+ 	composer = "John Coltrane"
  	tagline = ""
 
 }

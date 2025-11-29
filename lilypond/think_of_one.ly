@@ -10,7 +10,7 @@
 
 \header {
 	title = "Think Of One"
-	composer = "Monk"
+	composer = "Thelonious Monk"
 	tagline = "" 
 }
 

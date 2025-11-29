@@ -12,7 +12,7 @@
 
 \header {
 	title = "Expression" 
- 	composer = "Coltrane"
+ 	composer = "John Coltrane"
  	tagline = ""
 
 }

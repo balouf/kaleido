@@ -10,7 +10,7 @@
 
 \header {
 	title = "Herbie!" 
- 	composer = "G.Bellon"
+ 	composer = "Kaleido (GB)"
  	tagline = ""
 
 }

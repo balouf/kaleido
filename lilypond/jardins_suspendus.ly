@@ -10,7 +10,7 @@
 
 \header {
 	title = "Les jardins suspendus"
- 	composer = "BL"
+ 	composer = "Kaleido (BL)"
  	tagline = ""
 
 }

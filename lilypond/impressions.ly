@@ -11,7 +11,7 @@
 
 \header {
 	title = "Impressions" 
- 	composer = "Coltrane"
+ 	composer = "John Coltrane"
  	tagline = ""
 
 }

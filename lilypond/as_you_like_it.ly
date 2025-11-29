@@ -10,7 +10,7 @@
 
 \header {
 	title = "As You Like It" 
- 	composer = "A. L."
+ 	composer = "Kaleido (AL)"
  	tagline = ""
 
 }

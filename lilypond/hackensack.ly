@@ -10,7 +10,7 @@
 
 \header {
 	title = "Hackensack" 
- 	composer = "Monk"
+ 	composer = "Thelonious Monk"
  	tagline = ""
 
 }

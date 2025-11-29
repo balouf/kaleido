@@ -10,7 +10,7 @@
 
 \header {
 	title = "Played Twice" 
- 	composer = "Monk"
+ 	composer = "Thelonious Monk"
  	tagline = ""
 
 }

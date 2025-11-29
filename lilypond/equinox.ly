@@ -12,7 +12,7 @@
 
 \header {
 	title = "Equinox" 
- 	composer = "Coltrane"
+ 	composer = "John Coltrane"
  	tagline = ""
 
 }

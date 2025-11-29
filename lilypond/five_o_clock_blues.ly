@@ -12,7 +12,7 @@
 
 \header {
 	title = "Five o'clock blues" 
- 	composer = "B.L."
+ 	composer = "Kaleido (BL)"
  	tagline = ""
 
 }

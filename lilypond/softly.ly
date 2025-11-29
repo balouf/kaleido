@@ -10,7 +10,7 @@
 
 \header {
 	title = "Softly As A Morning Sunrise" 
- 	composer = "Hamerstein"
+ 	composer = "O. Hammerstein"
  	tagline = ""
 
 }

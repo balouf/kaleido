@@ -10,7 +10,7 @@
 
 \header {
 	title = "Eleven with Pride" 
- 	composer = "G.B."
+ 	composer = "Kaleido (GB)"
  	tagline = "A love song for Stef and Joe"
 
 }

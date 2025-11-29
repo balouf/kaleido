@@ -10,7 +10,7 @@
 
 \header {
 	title = "Spybot"
-	composer = "Vaurien"
+	composer = "Kaleido (AL)"
 	tagline = ""
 %	instrument = 
 %		"in C"

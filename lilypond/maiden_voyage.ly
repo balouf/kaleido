@@ -9,7 +9,7 @@
 
 \header {
 	title = "Maiden Voyage" 
- 	composer = "By Herbie Hancock"
+ 	composer = "Herbie Hancock"
  	tagline = ""
 
 }

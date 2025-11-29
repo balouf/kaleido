@@ -10,7 +10,7 @@
 
 \header {
 	title = "Round Midnight" 
- 	composer = "Monk"
+ 	composer = "Thelonious Monk"
  	tagline = ""
 
 }

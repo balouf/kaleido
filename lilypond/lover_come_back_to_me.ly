@@ -10,7 +10,7 @@
 
 \header {
 	title = "Lover Come Back To Me" 
- 	composer = "Romberg - Hammerstein"
+ 	composer = "O. Hammerstein - Romberg"
  	tagline = ""
 
 }

@@ -12,7 +12,7 @@
 
 \header {
 	title = "Jumpstick" 
- 	composer = "Ben Leperchey"
+ 	composer = "Kaleido (BL)"
  	tagline = ""
 
 }
