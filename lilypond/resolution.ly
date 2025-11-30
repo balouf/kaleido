@@ -17,7 +17,7 @@
 }
 
 
-accords = \chords {
+accordsu = \chords {
 f1:m7 s s2 des1:sus7 s2
 g1:8 s c:sus4.9- f2:m7 c:8
 f1:m7 s s2 des1:sus7 s2
@@ -28,7 +28,7 @@ f1:m7 s s s s s s s \break
 f1:m7 s s s s s s s
 }
 
-theme = \new Staff {
+themeu = \new Staff {
 	\time 2/2
 	\tempo 4 = 160
 	\set Staff.midiInstrument = "trumpet"
@@ -56,5 +56,8 @@ b4 <es es,>8 <f f,>~2~1\bar "|."\break
 \repeat unfold 16 {s1}\fine
 }
 }
+
+accords = \transpose c bes \accordsu
+theme = \transpose c' bes \themeu
 
 \include "utils/books.ly"
