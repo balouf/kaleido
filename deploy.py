@@ -40,7 +40,7 @@ def run_lily(file, lily, dest):
     with TemporaryDirectory() as tmpdir:
         result = subprocess.run(
             [lily, '-o', tmpdir, '-dno-point-and-click', str(file.resolve())],
-            cwd=tmpdir,
+            cwd=file.parent,
             stdout=subprocess.PIPE,
             stderr=subprocess.PIPE,
             text=True
@@ -119,9 +119,6 @@ def build_internal_site(lily, source, dest, jobs=1):
         if file.suffix not in ['.pdf', '.mid', '.midi']:
             continue
         stem = file.stem.split('--')[0]
-        if not stem:
-            # Skip files with empty stem (likely artifacts)
-            continue
         if file.suffix in ['.mid', '.midi']:
             suffix = 'Midi'
         elif '--' not in file.stem:
