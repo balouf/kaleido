@@ -1,0 +1,33 @@
+site:
+  name: "Kaleido Jazz Group"
+  default_language: "fr"
+
+contact:
+  email: "contact@kaleido-jazz.fr"
+
+soundcloud:
+  playlist_url: "https://soundcloud.com/kaleido-475156859/sets/kaleido"
+
+members:
+  - name: "Aurelien"
+    instrument: "Saxophones"
+    instrument_en: "Saxophones"
+  - name: "Benjamin"
+    instrument: "Guitare"
+    instrument_en: "Guitar"
+  - name: "Fabien"
+    instrument: "Cuivres"
+    instrument_en: "Brass"
+  - name: "Florian"
+    instrument: "Batterie"
+    instrument_en: "Drums"
+  - name: "Gilles"
+    instrument: "Basse"
+    instrument_en: "Bass"
+
+theme:
+  primary: "#E8A824"
+  secondary: "#D35F2D"
+  accent: "#2D8B8B"
+  background: "#1A1A1A"
+  text: "#F5F5F5"

@@ -1,8 +1,22 @@
 ==================
-Kaleido
+Kaleido Jazz Group
 ==================
 
-Repository of Lilypond themes
+.. image:: kaleido.png
+   :alt: Kaleido Logo
+   :align: center
+   :width: 300px
+
+|
+
+Jazz moderne aux harmonies audacieuses / Modern jazz with bold harmonies
+
+=========
+Sites Web
+=========
+
+* **Site public** : `https://balouf.github.io/kaleido/public/ <https://balouf.github.io/kaleido/public/>`_
+* **Partitions (membres)** : `https://balouf.github.io/kaleido/internal/ <https://balouf.github.io/kaleido/internal/>`_
 
 ================
 Usage
@@ -12,8 +26,8 @@ Usage
 Regular (not a geek)
 ---------------------
 
-* Got to `https://balouf.github.io/kaleido/ <https://balouf.github.io/kaleido/>`_
-* Enjoy!
+* Go to `https://balouf.github.io/kaleido/public/ <https://balouf.github.io/kaleido/public/>`_ for the band's website
+* Go to `https://balouf.github.io/kaleido/internal/ <https://balouf.github.io/kaleido/internal/>`_ for sheet music
 
 -------
 Geek
@@ -29,16 +43,12 @@ History
 =======
 
 ---------------------------------
-???? TODOS
+0.4.0 (2026-01): Public Website
 ---------------------------------
 
-* Killer joe -> check harmony
-* Peaches -> complete retranscription
-* Spain -> Check structure
-* One step Beyond?
-* In case -> write down harmonized riff
-* Watermelon -> check possible reponse
-
+* New bilingual public website (FR/EN)
+* Internal site moved to /internal/
+* Public showcase site at /public/
 
 ---------------------------------
 0.3.0 (2025-03-15): GH-Pages

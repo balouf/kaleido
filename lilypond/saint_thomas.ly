@@ -4,7 +4,7 @@
 #(set-global-staff-size 30)
 #(set-default-paper-size "a4")
 
-\include "AccordsJazzDefs.ly"
+\include "utils/AccordsJazzDefs.ly"
 
 \paper { indent = 0\cm} 
 

@@ -1,0 +1,8 @@
+events:
+  # Template with past date (won't be displayed)
+  - date: "2024-01-15"
+    time: "20:30"
+    venue: "Le Baiser Sale"
+    city: "Paris"
+    description_fr: "Concert jazz"
+    description_en: "Jazz concert"

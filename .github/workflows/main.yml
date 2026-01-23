@@ -32,7 +32,7 @@ jobs:
           tar xvzf lilypond-2.24.2-linux-x86_64.tar.gz
           mkdir ~/.fonts
           cp ./lilypond/utils/lilyjazzchord.otf ~/.fonts/
-          pip install tqdm
+          pip install tqdm pyyaml markdown pillow
 
       - name: Compile files
         run: |
