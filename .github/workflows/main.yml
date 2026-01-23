@@ -29,15 +29,14 @@ jobs:
           sudo apt update
           sudo apt install wget
           wget https://gitlab.com/lilypond/lilypond/-/releases/v2.24.2/downloads/lilypond-2.24.2-linux-x86_64.tar.gz
-          mkdir lilypond-bin
-          tar xzf lilypond-2.24.2-linux-x86_64.tar.gz -C lilypond-bin --strip-components=1
-          mkdir -p ~/.fonts
-          cp lilypond-bin/share/lilypond/*/fonts/otf/*.otf ~/.fonts/ || true
+          tar xvzf lilypond-2.24.2-linux-x86_64.tar.gz
+          mkdir ~/.fonts
+          cp ./lilypond/utils/lilyjazzchord.otf ~/.fonts/
           pip install tqdm pyyaml markdown pillow
 
       - name: Compile files
         run: |
-          python deploy.py -l "./lilypond-bin/bin/lilypond"
+          python deploy.py -l "./lilypond-2.24.2/bin/lilypond"
 
       - name: Deploy Sphinx documentation on Github Pages
         uses: JamesIves/github-pages-deploy-action@v4
