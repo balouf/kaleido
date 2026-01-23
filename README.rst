@@ -15,7 +15,7 @@ Jazz moderne aux harmonies audacieuses / Modern jazz with bold harmonies
 Sites Web
 =========
 
-* **Site public** : `https://balouf.github.io/kaleido/public/ <https://balouf.github.io/kaleido/public/>`_
+* **Site public** : `https://balouf.github.io/kaleido/ <https://balouf.github.io/kaleido/>`_
 * **Partitions (membres)** : `https://balouf.github.io/kaleido/internal/ <https://balouf.github.io/kaleido/internal/>`_
 
 ================
@@ -26,7 +26,7 @@ Usage
 Regular (not a geek)
 ---------------------
 
-* Go to `https://balouf.github.io/kaleido/public/ <https://balouf.github.io/kaleido/public/>`_ for the band's website
+* Go to `https://balouf.github.io/kaleido/ <https://balouf.github.io/kaleido/>`_ for the band's website
 * Go to `https://balouf.github.io/kaleido/internal/ <https://balouf.github.io/kaleido/internal/>`_ for sheet music
 
 -------
@@ -47,8 +47,8 @@ History
 ---------------------------------
 
 * New bilingual public website (FR/EN)
-* Internal site moved to /internal/
-* Public showcase site at /public/
+* Root URL redirects to public site
+* Internal site (sheet music) at /internal/
 
 ---------------------------------
 0.3.0 (2025-03-15): GH-Pages

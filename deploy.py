@@ -830,6 +830,7 @@ def build_public_site(content_dir, dest, logo_path):
 
 def main():
     dest = Path(args.dest)
+    dest.mkdir(parents=True, exist_ok=True)
 
     if not args.public_only:
         print("Building internal site (sheet music)...")
@@ -849,6 +850,24 @@ def main():
                 print(f"Warning: Content directory '{content_dir}' not found. Skipping public site.")
             else:
                 build_public_site(content_dir, public_dest, logo_path)
+
+    # Create root redirect to public site
+    root_redirect = """<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="refresh" content="0; url=./public/">
+    <title>Kaleido Jazz Group</title>
+    <script>window.location.href = './public/';</script>
+</head>
+<body>
+    <p>Redirecting to <a href="./public/">Kaleido Jazz Group</a>...</p>
+</body>
+</html>
+"""
+    with open(dest / 'index.html', 'w', encoding='utf8') as f:
+        f.write(root_redirect)
+    print(f"Root redirect created at {dest / 'index.html'}")
 
 
 if __name__ == '__main__':
