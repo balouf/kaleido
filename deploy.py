@@ -83,10 +83,9 @@ def build_internal_site(lily, source, dest, jobs=1):
                 name2author[name] = author
 
     dest = Path(dest)
+    if dest.exists():
+        shutil.rmtree(dest)
     dest.mkdir(parents=True, exist_ok=True)
-    for file in dest.glob('*'):
-        if file.is_file():
-            file.unlink()
 
     errors = []
     max_retries = 3
@@ -117,13 +116,18 @@ def build_internal_site(lily, source, dest, jobs=1):
     for file in dest.glob('*'):
         if "lilypond-tmp" in file.stem:
             continue
+        if file.suffix not in ['.pdf', '.mid', '.midi']:
+            continue
+        stem = file.stem.split('--')[0]
+        if not stem:
+            # Skip files with empty stem (likely artifacts)
+            continue
         if file.suffix in ['.mid', '.midi']:
             suffix = 'Midi'
         elif '--' not in file.stem:
             suffix = 'Ut'
         else:
             suffix = file.stem.split('--')[1]
-        stem = file.stem.split('--')[0]
         if stem not in stem2name:
             raise KeyError(f"Unexpected file '{file.name}': stem '{stem}' not found in source files")
         name = stem2name[stem]
