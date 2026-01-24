@@ -730,7 +730,12 @@ def render_public_page(config, content, events, lang):
         <h1>{escape(site_name)}</h1>
         <p class="tagline">{escape(fm.get('tagline', ''))}</p>
     </header>
-
+        <section id="events" {events_section_style}>
+            <h2>{escape(fm.get('events_title', 'Events'))}</h2>
+            <ul class="events-list">
+                {events_html}
+            </ul>
+        </section>
     <main>
         <section id="about">
             <h2>{escape(fm.get('about_title', 'About'))}</h2>
@@ -747,13 +752,6 @@ def render_public_page(config, content, events, lang):
         <section id="music">
             <h2>{escape(fm.get('music_title', 'Our Music'))}</h2>
             {soundcloud_embed}
-        </section>
-
-        <section id="events" {events_section_style}>
-            <h2>{escape(fm.get('events_title', 'Events'))}</h2>
-            <ul class="events-list">
-                {events_html}
-            </ul>
         </section>
 
         <section id="contact">

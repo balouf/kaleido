@@ -6,3 +6,11 @@ events:
     city: "Paris"
     description_fr: "Concert jazz"
     description_en: "Jazz concert"
+
+
+  - date: "2026-06-21"
+    time: "20:30"
+    venue: "Somewhere"
+    city: "Paris"
+    description_fr: "Super-Concert"
+    description_en: "Hell of a Gig!"

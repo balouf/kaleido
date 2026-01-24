@@ -1,0 +1,12 @@
+[project]
+name = "kaleido"
+version = "0.1.0"
+description = "Kaleido's Websites builder"
+readme = "README.rst"
+requires-python = ">=3.12"
+dependencies = [
+    "markdown>=3.10.1",
+    "pillow>=12.1.0",
+    "pyyaml>=6.0.3",
+    "tqdm>=4.67.1",
+]

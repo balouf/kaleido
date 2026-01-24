@@ -24,19 +24,23 @@ jobs:
         with:
           python-version: '3.12'
 
-      - name: Install dependencies
-        run : |
-          sudo apt update
-          sudo apt install wget
-          wget https://gitlab.com/lilypond/lilypond/-/releases/v2.24.2/downloads/lilypond-2.24.2-linux-x86_64.tar.gz
-          tar xvzf lilypond-2.24.2-linux-x86_64.tar.gz -C ~/
-          mkdir -p ~/.fonts
-          cp ./lilypond/utils/lilyjazzchord.otf ~/.fonts/
-          pip install tqdm pyyaml markdown pillow
+      - name: Set up uv
+        uses: astral-sh/setup-uv@v5
+        with:
+          version: "0.9.26"
+
+      - name: Set up Lilypond
+        uses: codello/setup-lilypond@main
+        with:
+          lilypond-version: 2.24
+
+      - name: Set up venv
+        run: |
+          uv sync
 
       - name: Compile files
         run: |
-          python deploy.py -l ~/lilypond-2.24.2/bin/lilypond
+          uv run deploy.py
 
       - name: Deploy Sphinx documentation on Github Pages
         uses: JamesIves/github-pages-deploy-action@v4
