@@ -40,12 +40,14 @@ jobs:
 
       - name: Compile files
         run: |
+          mkdir ~/.fonts
+          cp ./lilypond/utils/lilyjazzchord.otf ~/.fonts/
           uv run deploy.py
 
       - name: Deploy Sphinx documentation on Github Pages
         uses: JamesIves/github-pages-deploy-action@v4
         if: github.ref == 'refs/heads/master'
         with:
-          BRANCH: gh-pages
-          FOLDER: build/
-          SINGLE-COMMIT: true
+          branch: gh-pages
+          folder: build/
+          single-commit: true
