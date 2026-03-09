@@ -65,5 +65,5 @@ aes4. 8 bes aes g f g2 r8 g c d es4. 8 f es d c d g, bes d c4 bes \break
 } \fine
 }
 }
-
+#(define raggedlast #f)
 \include "utils/books.ly"
