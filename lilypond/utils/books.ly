@@ -1,3 +1,8 @@
+#(define ragged-last-setting
+   (if (defined? 'raggedlast)
+       raggedlast
+       #t))
+
 \book {
 %  \bookOutputSuffix #(string-append suffix "Ut")
 	\header{
@@ -10,6 +15,7 @@
 	>>
 
   \layout {
+ragged-last = #ragged-last-setting
 \context {
       \Score
       \override SpacingSpanner.common-shortest-duration = #(ly:make-moment 1 2)
@@ -37,6 +43,7 @@
 	\transpose es c' {\theme}
 	>>
   \layout {
+ragged-last = #ragged-last-setting
 \context {
       \Score
       \override SpacingSpanner.common-shortest-duration = #(ly:make-moment 1 2)
@@ -56,6 +63,7 @@
 	\transpose bes c' {\theme}
 	>>
    \layout {
+ragged-last = #ragged-last-setting
 \context {
       \Score
       \override SpacingSpanner.common-shortest-duration = #(ly:make-moment 1 2)
@@ -100,6 +108,7 @@
 	\transpose f c {\theme}
 	>>
    \layout {
+ragged-last = #ragged-last-setting
 \context {
       \Score
       \override SpacingSpanner.common-shortest-duration = #(ly:make-moment 1 2)
