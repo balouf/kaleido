@@ -12,6 +12,31 @@ trio = #(define-music-function (notes) (ly:music?)
     \tuplet 3/2 { #notes }
   #})
 
+rhythm =
+#(define-music-function (parser location music) (ly:music?)
+#{
+  {
+    % apparence jazz
+    \improvisationOn
+    \override NoteHead.style = #'slash
+    \override NoteHead.Y-offset = #0
+    \override Stem.direction = #UP
+
+    % pas de son MIDI
+    \set Staff.midiMinimumVolume = #0
+    \set Staff.midiMaximumVolume = #0
+
+    $music
+
+    % reset
+    \improvisationOff
+    \revert NoteHead.style
+    \revert NoteHead.Y-offset
+    \revert Stem.direction
+    \set Staff.midiMinimumVolume = #0.7
+    \set Staff.midiMaximumVolume = #0.8
+  }
+#})
 
 
 rythme = #(define-music-function (notes) (ly:music?)
