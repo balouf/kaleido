@@ -42,7 +42,7 @@ theme = \new Staff {
     \repeat volta 2 {
       <fis c> <g b,> r c r c, r4
       r \tuplet 3/2 {<a' fis>8 <aes f> <g e>} <fis es> <d' fis,>~ <d fis,>4
-      <b g>8 f <b f> <c e,>8~ <c e,>2~ <c e>4 r r8 bes aes f 
+      <b g>8 f <b f> <c e,>8~ <c e,>2~ <c e,>4 r r8 bes aes f 
       gis a f c
       <<
         \voiceOne {bes' es, c' f, es' g, r4 d'8 aes bes d, c' e,}

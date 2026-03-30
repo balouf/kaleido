@@ -47,7 +47,7 @@ theme = \new Staff {
 	\relative c' { 	
  % Type notes here 
 \compressEmptyMeasures
-\set Score.voltaSpannerDuration = #(ly:make-moment 8/4)
+\set Score.voltaSpannerDuration = #(ly:make-moment 4/4)
 \partial 8 c8
 \repeat volta 3 {
   f g \trio {c, f es~} 4. c8
@@ -71,5 +71,5 @@ theme = \new Staff {
 } \fine
 }
 }
-
+#(define raggedlast #t)
 \include "utils/books.ly"
