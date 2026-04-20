@@ -73,6 +73,33 @@ rythm = #(define-music-function (notes) (ly:music?)
   #})
 
 
+#(define (colorize-music mus color)
+   (if color
+       #{ \temporary \override NoteHead.color = #color
+          \temporary \override Stem.color = #color
+          \temporary \override Beam.color = #color
+          \temporary \override Flag.color = #color
+          \temporary \override Accidental.color = #color
+          #mus
+          \revert NoteHead.color
+          \revert Stem.color
+          \revert Beam.color
+          \revert Flag.color
+          \revert Accidental.color #}
+       mus))
+
+twoV =
+#(define-music-function
+   (colorBottom colorTop top bottom)
+   ((color? #f) (color? #f) ly:music? ly:music?)
+   #{
+     <<
+       { \voiceOne #(colorize-music top colorTop) }
+       \new Voice { \voiceTwo #(colorize-music bottom colorBottom) }
+     >>
+     \oneVoice
+   #})
+
 % modification de la procedure "chordRootNamer"
 %---- définition des altérations dans les accords -------
 #(define (chordNamer pitch majmin)	;majmin is un argument nécessaire à "chordNamer" mais inutile ici
