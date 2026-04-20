@@ -1,7 +1,7 @@
 #(define ragged-last-setting
    (if (defined? 'raggedlast)
        raggedlast
-       #t))
+       #f))
 
 \book {
 %  \bookOutputSuffix #(string-append suffix "Ut")

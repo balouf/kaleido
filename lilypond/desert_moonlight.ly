@@ -87,5 +87,4 @@ theme = \new Staff {
 \repeat unfold 8 {r1} \fine
 }
 }
-#(define raggedlast #f)
 \include "utils/books.ly"

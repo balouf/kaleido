@@ -52,5 +52,4 @@ r4 <a' c,> <f a,>8 <a c,> r <g c,> f es4 c b8 bes aes
 \fine
 	}
 }
-#(define raggedlast #f)
 \include "utils/books.ly"

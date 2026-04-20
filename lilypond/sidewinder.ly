@@ -98,5 +98,4 @@ theme = \new PianoStaff <<\upper \lower>>
 % \set Score.voltaSpannerDuration = #(ly:make-moment 8/4)
 % }
 % }
-#(define raggedlast #f)
 \include "utils/books.ly"
