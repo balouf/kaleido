@@ -1,0 +1,263 @@
+
+:root {
+    --primary: #E8A824;
+    --secondary: #D35F2D;
+    --accent: #2D8B8B;
+    --background: #1A1A1A;
+    --text: #F5F5F5;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--background);
+    color: var(--text);
+    line-height: 1.6;
+}
+
+/* Navigation */
+.nav {
+    position: fixed;
+    top: 0;
+    right: 0;
+    padding: 1rem;
+    z-index: 1000;
+    background: linear-gradient(to bottom, rgba(26, 26, 26, 0.95), transparent);
+}
+
+.lang-selector {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.lang-selector a {
+    color: var(--text);
+    text-decoration: none;
+    padding: 0.3rem 0.8rem;
+    border: 1px solid var(--accent);
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+
+.lang-selector a:hover,
+.lang-selector a.active {
+    background-color: var(--accent);
+    color: var(--background);
+}
+
+/* Hero Section */
+.hero {
+    min-height: 60vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 1.5rem;
+    padding-top: 3rem;
+}
+
+.hero-logo {
+    max-width: 250px;
+    width: 70%;
+    margin-bottom: 1rem;
+}
+
+.hero h1 {
+    color: var(--primary);
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.tagline {
+    color: var(--accent);
+    font-size: 1.3rem;
+    font-style: italic;
+}
+
+/* Sections */
+section {
+    padding: 2rem 1.5rem;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+section h2 {
+    color: var(--primary);
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+    border-bottom: 2px solid var(--secondary);
+    padding-bottom: 0.3rem;
+}
+
+section p {
+    margin-bottom: 0.8rem;
+}
+
+/* Members Grid */
+.members-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.member-card {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 1rem;
+    border-radius: 8px;
+    text-align: center;
+    border: 1px solid var(--accent);
+    transition: transform 0.3s ease;
+}
+
+.member-card:hover {
+    transform: translateY(-3px);
+    border-color: var(--primary);
+}
+
+.member-card h3 {
+    color: var(--primary);
+    margin-bottom: 0.3rem;
+    font-size: 1rem;
+}
+
+.member-card p {
+    color: var(--accent);
+    font-size: 0.85rem;
+}
+
+/* Music Section */
+.soundcloud-embed {
+    margin-top: 1rem;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.soundcloud-embed iframe {
+    width: 100%;
+    height: 500px;
+    border: none;
+}
+
+/* Events */
+.events-list {
+    list-style: none;
+}
+
+.event-item {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 1.5rem;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+    border-left: 4px solid var(--secondary);
+}
+
+.event-date {
+    color: var(--primary);
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
+.event-venue {
+    color: var(--accent);
+    margin: 0.5rem 0;
+}
+
+/* Contact */
+.contact-email {
+    display: inline-block;
+    color: var(--primary);
+    font-size: 1.3rem;
+    text-decoration: none;
+    padding: 0.8rem 1.5rem;
+    border: 2px solid var(--primary);
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    margin-top: 1rem;
+}
+
+.contact-email:hover {
+    background-color: var(--primary);
+    color: var(--background);
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 1.5rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    color: rgba(245, 245, 245, 0.6);
+    font-size: 0.9rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .hero {
+        min-height: 50vh;
+    }
+
+    .hero h1 {
+        font-size: 2rem;
+    }
+
+    .tagline {
+        font-size: 1.1rem;
+    }
+
+    section {
+        padding: 1.5rem 1rem;
+    }
+
+    section h2 {
+        font-size: 1.4rem;
+    }
+
+    .members-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .soundcloud-embed iframe {
+        height: 400px;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-logo {
+        max-width: 180px;
+    }
+
+    .hero h1 {
+        font-size: 1.6rem;
+    }
+
+    .tagline {
+        font-size: 1rem;
+    }
+
+    .members-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .member-card {
+        padding: 0.8rem;
+    }
+
+    .soundcloud-embed iframe {
+        height: 350px;
+    }
+
+    .contact-email {
+        font-size: 1.1rem;
+        padding: 0.6rem 1rem;
+    }
+}
