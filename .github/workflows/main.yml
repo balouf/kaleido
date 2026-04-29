@@ -33,7 +33,7 @@ jobs:
       - name: Set up uv
         uses: astral-sh/setup-uv@v5
         with:
-          version: "0.9.26"
+          version: "0.11.8"
 
       - name: Set up Lilypond
         uses: codello/setup-lilypond@main
