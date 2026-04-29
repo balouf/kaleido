@@ -20,16 +20,17 @@ from PIL import Image
 # CLI Arguments
 # =============================================================================
 
-parser = argparse.ArgumentParser(description="Build Kaleido websites")
-parser.add_argument("-l", "--lilypond", default="lilypond", help="path to Lilypond executable")
-parser.add_argument("-d", "--dest", default="build", help="destination folder")
-parser.add_argument("-s", "--source", default="lilypond", help="source folder for lilypond files")
-parser.add_argument("-c", "--content", default="content", help="content folder for public site")
-parser.add_argument("-j", "--jobs", type=int, default=os.cpu_count(), help="number of parallel jobs (default: #CPU)")
-parser.add_argument("--internal-only", action="store_true", help="only build internal site")
-parser.add_argument("--public-only", action="store_true", help="only build public site")
-parser.add_argument("--logo", default="kaleido.png", help="path to logo image")
-args = parser.parse_args()
+def build_parser():
+    parser = argparse.ArgumentParser(description="Build Kaleido websites")
+    parser.add_argument("-l", "--lilypond", default="lilypond", help="path to Lilypond executable")
+    parser.add_argument("-d", "--dest", default="build", help="destination folder")
+    parser.add_argument("-s", "--source", default="lilypond", help="source folder for lilypond files")
+    parser.add_argument("-c", "--content", default="content", help="content folder for public site")
+    parser.add_argument("-j", "--jobs", type=int, default=os.cpu_count(), help="number of parallel jobs (default: #CPU)")
+    parser.add_argument("--internal-only", action="store_true", help="only build internal site")
+    parser.add_argument("--public-only", action="store_true", help="only build public site")
+    parser.add_argument("--logo", default="kaleido.png", help="path to logo image")
+    return parser
 
 
 # =============================================================================
@@ -828,6 +829,7 @@ def build_public_site(content_dir, dest, logo_path):
 # =============================================================================
 
 def main():
+    args = build_parser().parse_args()
     dest = Path(args.dest)
     dest.mkdir(parents=True, exist_ok=True)
 
